@@ -1,0 +1,31 @@
+# Get HTML Page Neto - without java json or other language:
+# imports :
+import requests
+from bs4 import BeautifulSoup
+
+# send request to google server and get response. print the response status:
+response = requests.get("http://www.google.com")
+print(response.status_code)
+
+# web path + show them :
+
+
+
+# create a file to start parsing html data | .prettify means we want to get html data only. not java and not else.
+doc = BeautifulSoup(response.text, "html.parser")
+print(doc.prettify())
+
+# get all pdf files(bin):
+tag3 = doc.find_all("a")
+print(tag3)
+
+# get all images(bin):
+tag1 = doc.find_all("img")
+print(tag1)
+
+# get all pdf files(bin):
+tag2 = doc.find_all("embed")
+print(tag2)
+
+# save pdf/png file to the local computer :
+
